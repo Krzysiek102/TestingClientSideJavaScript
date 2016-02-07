@@ -1,0 +1,6 @@
+{
+  "name": "TestingClientSideJavaScript",
+  "devDependencies": {
+    "qunit": "^1.21.0"
+  }
+}
