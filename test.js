@@ -51,3 +51,20 @@ asyncTest('UI asynchronous test', function () {
         start();
     });
 })
+
+test('introduce global variable', function(){
+    globalvar = 3;
+    strictEqual(globalvar, 3);
+})
+
+test('hidden exception', function(){
+    //SUT.doSomething();
+})
+
+test('expect some asserts', function(){
+    expect(3);
+    ok(true);
+    ok(true);
+    ok(true);
+})
+

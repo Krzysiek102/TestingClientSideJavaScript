@@ -6,3 +6,7 @@ SUT.CreateToDoItem = function(){
 SUT.fadeOutDiv = function  (duration, callback){
     $("#div1").fadeOut(duration, callback);
 }
+
+SUT.doSomething = function  (){
+    throw "my exception";
+}
