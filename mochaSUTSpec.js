@@ -1,6 +1,6 @@
-describe('Calculator', function() {
-    it('should be able to compare 3 and 3', function() {
-        chai.assert.equal(3,3,'3 equals 3');
-    });        
+suite('my first suite', function(){
+   test('test 1', function  (){
+       chai.expect(1).to.equal(1);
+   }) 
 });
     
