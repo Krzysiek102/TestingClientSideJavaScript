@@ -1,3 +1,5 @@
+/* global Calculator */
+/* global CalculatorAsync */
 /* global AsyncSpec */
 describe('Calculator', function () {
     var calc;
@@ -42,6 +44,18 @@ describe('CalculatorAsync', function () {
           done();
         };
         calc.hideResult(callback);
+    });
+});
+
+function callMyCallback(cb){
+    cb();
+}
+
+describe('Spies', function() {
+    it('should spy a callback', function() {
+       var spyCb = jasmine.createSpy('mySpy');
+       callMyCallback(spyCb);
+       expect(spyCb).toHaveBeenCalled(); 
     });
 });
     

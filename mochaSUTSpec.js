@@ -31,8 +31,6 @@ describe('Outer Describe', function() {
             chai.expect(1).to.equal(1);
             done();
         }, 3500);
-    });
-        
+    });  
 });
-    
-    
+ 
