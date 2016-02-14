@@ -58,4 +58,60 @@ describe('Spies', function() {
        expect(spyCb).toHaveBeenCalled(); 
     });
 });
+
+var myObj ={
+    save: function(){
+        
+    },
+    getQuantity: function(){
+        return 5;
+    }
+}
+
+describe('Spies2', function() {
+    
+    it('should spy on save', function() {
+        var spy = spyOn(myObj, 'save');
+        myObj.save();
+        expect(spy).toHaveBeenCalled();
+    });
+    
+    
+    it('should spy on getQuantity', function() {
+        spyOn(myObj, 'getQuantity').and.returnValue(10);
+        expect(myObj.getQuantity()).toEqual(10);
+    });
+    
+    it('should spy on getQuantity with logging', function(){
+        spyOn(myObj, 'getQuantity').and.callFake(function  (){
+            console.log('returning 20');
+            return 20;
+        });
+        expect(myObj.getQuantity()).toEqual(20);
+    })
+    
+    
+    it('should spy on getQuantity CallThrough', function() {
+        var spy = spyOn(myObj, 'getQuantity').and.callThrough();
+        expect(myObj.getQuantity()).toEqual(5);
+        expect(spy).toHaveBeenCalled();
+    });
+    
+    
+    it('should spy on getQuantit throw', function() {
+        spyOn(myObj, 'getQuantity').and.throwError('problem');
+        var qty;
+        try {
+            qty = myObj.getQuantity()
+        } catch (ex) {
+            qty = 100;
+        };
+        expect(qty).toEqual(100);
+    });
+        
+        
+        
+            
+});
+    
     
