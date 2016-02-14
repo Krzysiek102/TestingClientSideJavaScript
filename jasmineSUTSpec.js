@@ -119,5 +119,33 @@ describe('Spies over objects', function() {
         expect(spy.save).toHaveBeenCalled();
     });
 });
+
+
+describe('Spy machers', function() {
+    it('should verify arguments', function() {
+        var spy = jasmine.createSpy('mySpy');
+        spy(1);
+        spy(2);
+        spy(1,1);
+        expect(spy).toHaveBeenCalledWith(1);
+    });
+        
+    it('should verify arguments that were not called', function() {
+        var spy = jasmine.createSpy('mySpy');
+        spy(1);
+        expect(spy).not.toHaveBeenCalledWith(4);
+    });
+    
+    it('should work with metadata', function() {
+        var myObj = {method: function  (){}};
+        var spy = spyOn(myObj, "method");
+        myObj.method(1);
+        myObj.method(2);
+        myObj.method(3);
+        expect(spy.calls.count()).toEqual(3);
+        expect(spy.calls.argsFor(0)[0]).toEqual(1);
+    });        
+});
+    
     
     
