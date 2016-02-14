@@ -144,8 +144,11 @@ describe('Spy machers', function() {
         myObj.method(3);
         expect(spy.calls.count()).toEqual(3);
         expect(spy.calls.argsFor(0)[0]).toEqual(1);
-    });        
-});
+    });
     
-    
-    
+    it('should work with utility methods', function() {
+        var spy = jasmine.createSpy('a spy');
+        expect(jasmine.isSpy(spy)).toBeTruthy();
+        spy();
+    });            
+});    
