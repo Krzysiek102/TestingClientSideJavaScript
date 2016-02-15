@@ -4,7 +4,8 @@
     "qunit": "^1.21.0",
     "jasmine-core": "jasmine#^2.4.1",
     "mocha": "^2.4.5",
-    "chai": "^3.5.0"
+    "chai": "^3.5.0",
+    "sinon": "^1.17.3"
   },
   "dependencies": {
     "jquery": "^2.2.0"
