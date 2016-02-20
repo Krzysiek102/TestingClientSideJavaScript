@@ -2,7 +2,7 @@ mocha.setup({timeout:3000});
 describe('my first suite', function(){
    
    beforeEach(function  (){
-       console.log('beforeEach');
+       console.log('beforeEach log entry');
        
    })
    
