@@ -3,8 +3,6 @@ describe('my first suite', function(){
    
    beforeEach(function  (){
        console.log('beforeEach log entry');
-       
-       
    })
    
    afterEach(function  (){
