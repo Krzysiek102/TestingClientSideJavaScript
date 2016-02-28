@@ -16,13 +16,23 @@ describe('Spies', function() {
 describe('Sinon assertions', function() {
     it('should use a built-in assert', function() {
         var spy = sinon.spy();
-        expect(spy.called).toBeTruthy();
-    });
-    
-    it('should use a sinon assert', function() {
-        var spy = sinon.spy();
-        sinon.assert.called(spy);
-    });  
+        expect(spy.called).toBeFalsy();
+    }); 
 });
-    
+
+
+describe('combat attack', function() {
+    it('should damage the defender if the hit is successfull', function() {
+        var combat = new Combat();
+        var attacker = sinon.stub(new Character());
+        var defender = sinon.stub(new Character());
+        attacker.damage = 5;
+        attacker.calculateHit.returns(true);
+        
+        combat.attack(attacker, defender);
+        
+        expect(defender.takeDamage.called).toBe(true);
+        expect(defender.takeDamage.getCall(0).calledWith(5)).toBe(true);
+    });
+});
     
