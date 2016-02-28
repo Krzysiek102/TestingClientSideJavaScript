@@ -57,9 +57,9 @@ test('introduce global variable', function(){
     strictEqual(globalvar, 3);
 })
 
-test('hidden exception', function(){
-    //SUT.doSomething();
-})
+// test('hidden exception', function(){
+//     //SUT.doSomething();
+// })
 
 test('expect some asserts', function(){
     expect(3);
