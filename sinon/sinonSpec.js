@@ -97,7 +97,7 @@ describe('timers', function() {
         var date2 = Date.now();
         console.log(date2);
         clock.restore();
-    });
-        
-        
+    }); 
 });
+
+    
