@@ -1,11 +1,11 @@
 {
   "name": "testingclientsidejavascript",
   "version": "1.0.0",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "jasmine-core": "^2.4.1",
-    "lolex": "^1.4.0",
-    "karma-jasmine": "^0.3.7"
+    "karma": "^0.13.22",
+    "karma-jasmine": "^0.3.7",
+    "lolex": "^1.4.0"
   }
 }
