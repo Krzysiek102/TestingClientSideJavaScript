@@ -7,10 +7,14 @@ module.exports = function(grunt) {
                     specs: 'jasmineKarma/jasmineSUTSpec.js'
                 }
             }
+        },
+        qunit: {
+            all: ['qUnit/qUnitRunner.html']
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-jasmine');
+    grunt.loadNpmTasks('grunt-contrib-qunit');
 
-    grunt.registerTask('default', ['jasmine']);
+    grunt.registerTask('default', ['jasmine', 'qunit']);
 }
