@@ -19,11 +19,23 @@ module.exports = function(grunt) {
                 }
             }
         },
+        jshint: {
+            all: ['jasmineKarma/*.js', 'qUnit/*.js', 'mocha/*.js'],
+            options:{
+                asi: true
+            }
+        },
+        watch: {
+            files: ['jasmineKarma/*.*', 'qUnit/*.*', 'mocha/*.*'],
+            tasks: ['jshint', 'jasmine', 'qunit', 'mocha']
+        }
     });
 
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-contrib-qunit');
     grunt.loadNpmTasks('grunt-mocha');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('default', ['jasmine', 'qunit', 'mocha']);
 }
